@@ -1,0 +1,6 @@
+version: '3'
+services:
+  datproc:
+    build: ./
+    volumes:
+      - ../out:/out
