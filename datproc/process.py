@@ -85,20 +85,18 @@ wiki10_pos = []
 wiki10_l = wiki10["sentence"].to_numpy()
 
 if len(sys.argv) != 2:
-    print("Syntax: process-rep.sh <nº iter>")
+    sys.stderr.write("Syntax: process-rep.sh <nº iter>\n")
 
 n = int(sys.argv[1])
-print("Doing iteration %d..." % n)
-for i in wiki10_l[n : n + 10]:
-    try:
-        s = tokenize(i)
-    except Exception as e:
-        print(e)
-        print("THIS SENTENCE FAILED")
-        exit(1)
-    wiki10_pos.append([])
-    for w in s:
-        wiki10_pos[-1].append((w.get_form(), w.get_lemma(), w.get_tag()))
+sys.stderr.write("Doing iteration %d...\n" % n)
+try:
+    s = tokenize(wiki10_l[n])
+except Exception as e:
+    sys.stderr.write(repr(e))
+    sys.stderr.write("THIS SENTENCE FAILED\n")
+    exit(1)
+for w in s:
+    wiki10_pos.append((w.get_form(), w.get_lemma(), w.get_tag()))
 
-json.dump(wiki10_pos, open("/out/wiki10_pos-%d.json" % n, "w"))
-print("Finished! :)")
+print(json.encoder.JSONEncoder().encode(wiki10_pos))
+sys.stderr.write("Finished! :)\n")
