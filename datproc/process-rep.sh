@@ -29,3 +29,4 @@ wait
 printf '+ Doing final task!'
 printf '%s\n' /out/wiki10*.json
 python3 /src/merge.py /out/wiki10*p.json /out/wiki10_pos-full.json
+python3 /src/fprocess.py /out/wiki10_pos-full.json /out/wiki10_pos-full-dic.json /out/wiki10_pos-full-freqs.json

@@ -1,5 +1,10 @@
+#!/usr/bin/env python3
 import sys
 import json
+
+if len(sys.argv) > 3:
+    sys.stderr.write("Expected at least 2 arguments.")
+    exit(1)
 
 final_d = []
 for i in sys.argv[1:-1]:
