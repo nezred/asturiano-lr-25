@@ -106,7 +106,6 @@ def main(iter_n):
 
     print(json.encoder.JSONEncoder().encode(wiki10_pos))
     sys.stderr.write("Finished! :)\n")
-    pass
 
 
 if __name__ == "__main__":
