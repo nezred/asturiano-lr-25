@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #cd ${BASH_SOURCE}
 COMPOSE=podman-compose
@@ -15,5 +15,3 @@ genposdata() { (
 ); }
 
 [ -f ./out/wiki10_pos-full.json ] || genposdata
-
-# install venv with requirements (dont bother with docker here)

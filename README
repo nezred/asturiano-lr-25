@@ -1,0 +1,31 @@
+                              .____________.
+                              |ASTURIANO-LR|
+                              `------------´
+
+Authors:
+    * Lilia Marina Jiménez Redondo
+    * Inés Martínez Fernandez
+    * Paula Posadas Postigo
+
+,•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•,
+•                              INSTALLATION                               • 
+•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•
+
+Install docker, or podman: (podman is recommended)
+
+# apt install docker.io docker-compose
+
+or
+
+# apt install podman podman-compose
+
+Edit the $COMPOSE variable in gendata.sh to be podman-compose or docker-compose,
+depending on the program used.
+
+Finally run:
+
+$ ./gendata.sh
+
+The resulting data  should be saved  in the ./out/wiki10_pos-full.json  and
+./out/wiki10_pos-full-freq.csv files. The rest are artifacts created during
+preprocessing, and may be safely ignored
